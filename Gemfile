@@ -48,6 +48,19 @@ gem "sassc-rails"
 #Bootstrap 5
 gem "bootstrap"
 
+#Devise for the usersa and forms
+gem "devise"
+
+#Faker for the seed fil
+
+gem "faker"
+
+#Figaro for the active storage and amazon
+gem "figaro"
+
+#the amazon gem
+gem "aws-sdk-s3"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
