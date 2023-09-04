@@ -21,21 +21,26 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  
-  <div class="container" >
-  <% f.fields_for :images do |image_form|  %>
-    <div class="form-group" >
-      <%= image_form.label :url, "Agrega tu imagen de perfil" %>
-      <%= image_form.text_field %>
-    </div>
-  <%= end  %>
-
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-
+  
+  <div class="form-group" >
+  <%= f.label :images %>
+  <%= f.file_field :images, class:"form-control" %>
+  </div>
+  
+  
+  <%# <div class="container"> %>
+    <%# <% f.fields_for :images do |image_form| %> 
+      <%# <div class="form-group"> %>
+        <%# <%= image_form.label :url, "Agrega tu imagen de perfil" %> 
+        <%# <%= image_form.text_field :url, class: 'form-control' %> 
+      <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

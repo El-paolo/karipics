@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  # before_action :configure_sign_up_params, only: [:create ]
+  # before_action :configure_account_update_params, only: [:update ]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super do |resource|
+      resource.images.build
+    end
+  end
 
   # POST /resource
   # def create
@@ -40,14 +42,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # protected
 
-  # If you have extra params to permit, append them to the sanitizer.
+  #  If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, images_attributes: [:url, :id] ])
   # end
 
-  # If you have extra params to permit, append them to the sanitizer.
+  #  If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:username, :email, images_attributes:
+  #     [:url, :id]])
   # end
 
   # The path used after sign up.
