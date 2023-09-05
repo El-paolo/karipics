@@ -1,10 +1,7 @@
 class CommentsController < ApplicationController
     before_action :set_comment, only: %i[ show edit update destroy ]
-    before_action :authenticate_user!, only: %i[ destroy update edit create new ]
-
+    before_action :authenticate_user!, except: %i[ show ] 
     
-
-  
     # GET /comments/1/edit
     def edit
     end
