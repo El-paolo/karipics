@@ -88,3 +88,4 @@ production:
   database: karipics_production
   username: karipics
   password: <%= ENV["KARIPICS_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
