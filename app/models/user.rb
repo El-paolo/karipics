@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_one_attached :images
   has_many :posts
   has_many :comments
+  enum :role, [:normal_user, :admin]
 
 end
